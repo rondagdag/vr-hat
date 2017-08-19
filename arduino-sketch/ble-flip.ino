@@ -16,10 +16,10 @@
 
 
 BLEPeripheral blePeripheral;
-BLEService relayService("917649A0-D98E-11E5-9EEC-0002A5D5C51B");
-//BLECharacteristic relayCharacteristic("917649A1-D98E-11E5-9EEC-0002A5D5C51B", BLEWrite, 5);
-BLEUnsignedCharCharacteristic relayCharacteristic("917649A1-D98E-11E5-9EEC-0002A5D5C51B", BLERead | BLENotify);
-BLEDescriptor relayDescriptor("2902","relay");
+BLEService hatService("917649A0-D98E-11E5-9EEC-0002A5D5C51B");
+//BLECharacteristic hatCharacteristic("917649A1-D98E-11E5-9EEC-0002A5D5C51B", BLEWrite, 5);
+BLEUnsignedCharCharacteristic hatCharacteristic("917649A1-D98E-11E5-9EEC-0002A5D5C51B", BLERead | BLENotify);
+BLEDescriptor hatDescriptor("2902","hat");
 
 //BLEService batteryService("180F"); // BLE Battery Service
 //BLEUnsignedCharCharacteristic batteryLevelChar("2A19",  // standard 16-bit characteristic UUID
@@ -39,11 +39,11 @@ void setup()
   //BLE.addService(batteryService);   // Add the BLE Battery service
   //batteryLevelChar.setValue(lastOrientation);   // initial value for this characteristic
 
-  blePeripheral.setLocalName("relays");
-  blePeripheral.setAdvertisedServiceUuid(relayService.uuid());
-  blePeripheral.addAttribute(relayService);
-  blePeripheral.addAttribute(relayCharacteristic);
-  blePeripheral.addAttribute(relayDescriptor);
+  blePeripheral.setLocalName("hat");
+  blePeripheral.setAdvertisedServiceUuid(hatService.uuid());
+  blePeripheral.addAttribute(hatService);
+  blePeripheral.addAttribute(hatCharacteristic);
+  blePeripheral.addAttribute(hatDescriptor);
 
   // Start advertising
   BLE.advertise();
@@ -112,7 +112,7 @@ void updateBatteryLevel() {
   if (orientation != lastOrientation) {
     Serial.println(orientationString);
     //batteryLevelChar.setValue(orientation);  // and update the battery level characteristic
-    relayCharacteristic.setValue(orientation);
+    hatCharacteristic.setValue(orientation);
     lastOrientation = orientation;
   }
 }
