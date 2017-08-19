@@ -12,8 +12,7 @@
 */
 
 #include "CurieIMU.h"
-#include <CurieBLE.h>
-
+#include <CurieBLE.h
 
 BLEPeripheral blePeripheral;
 BLEService hatService("917649A0-D98E-11E5-9EEC-0002A5D5C51B");
