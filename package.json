@@ -1,0 +1,21 @@
+{
+  "name": "vr-hat",
+  "version": "0.0.1",
+  "description": "wear hat - random 360 vr scenes",
+  "scripts": {
+    "start": "http-server ./public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rondagdag/vr-hat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rondagdag/vr-hat/issues"
+  },
+  "homepage": "https://github.com/rondagdag/vr-hat#readme",
+  "dependencies": {
+    "http-server": "^0.10.0"
+  }
+}
