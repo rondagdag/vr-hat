@@ -1,14 +1,12 @@
 var snowList = document.querySelector('#snowList');
 var scene = document.querySelector('a-scene');
-var carbonOverload = false;
-
 
  AFRAME.registerComponent('set-sky', {
    schema: {default:''},
    init: function() {
      this.timeout = setInterval(this.checkStatus.bind(this), 3000);
      this.material = this.el.getAttribute('material');
-      this.el.setAttribute('material',{ src: '', color: 'black'})
+     this.el.setAttribute('material',{ src: '', color: 'black'})
      this.skyvisible = false;
    },
    remove: function() {
@@ -16,7 +14,8 @@ var carbonOverload = false;
      this.el.removeObject3D(this.object3D);
    },
   updateSky: function(result) {
-        if (result.accel >= 1 ) {
+        console.log(result)
+        if (result == "down" ) {
                     // snow.components['particle-system'].data['particleCount'] = 5000;
                     // enableSnow(snow);
                 if (!this.skyvisible) { 
@@ -40,20 +39,10 @@ var carbonOverload = false;
               }   
    },
    checkStatus: function() {
-     var self = this;
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', "/updates");
-        xhr.addEventListener('readystatechange', function(data)
-		    { 
-          if(xhr.readyState !== XMLHttpRequest.DONE) return;
-          if(xhr.status !== 200 && xhr.status !== 304){
-            console.warn('Could not fetch avatar info');
-            return;
-          }
+    if (hatClick.isConnected) {
+        hatClick.getBodySensorLocation().then((e) => this.updateSky(e));
+    }
 
-          var result = JSON.parse(xhr.responseText);  
-          self.updateSky(result);  
-        });
-        xhr.send();
+
    }
  });
