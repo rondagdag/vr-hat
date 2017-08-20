@@ -1,5 +1,9 @@
 # vr-hat
-create repository for ble controlled relay click board
+Virtual Reality Hat
+
+
+[![Deploy and try it out on Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
+
 </br>
 You can view the project video and tutorial at:
 
