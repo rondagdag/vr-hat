@@ -2,6 +2,9 @@
 Virtual Reality Hat
 
 
+[![Deploy and try it out on Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
+
+After deployment, https://<name>.azurewebsites.net/public
 </br>
 You can view the project video and tutorial at:
 
