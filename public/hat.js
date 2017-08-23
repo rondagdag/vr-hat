@@ -29,7 +29,7 @@ var scene = document.querySelector('a-scene');
                 if (this.skyvisible) { 
                   return;
                 } else {
-                  var filename = '360/image' + Math.floor(Math.random()*6) + '.jpg';// + "?" + Math.random();
+                  var filename = '#image' + Math.floor(Math.random()*6);// + "?" + Math.random();
                   this.el.setAttribute('src',filename)
                   this.material.src = filename
                   this.el.setAttribute('material', this.material);

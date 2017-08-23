@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "wear hat - random 360 vr scenes",
   "scripts": {
-    "start": "http-server ./public"
+    "start": "http-server ./public -S -C ./private/cert.pem -K ./private/key.pem -o"
   },
   "repository": {
     "type": "git",
